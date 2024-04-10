@@ -202,7 +202,8 @@ def get(req_handler, routes):
                 req_handler.wfile.write(bytes(data,  encoding = 'utf-8'))
                 return
 
-def run(routes, host = '0.0.0.0', port = 8080):
+#port 8080 didn't work
+def run(routes, host = '0.0.0.0', port = 8085):
     """ Runs a class as a server whose methods have been decorated with
         @route.
     """
@@ -215,7 +216,8 @@ def run(routes, host = '0.0.0.0', port = 8080):
     thread = threading.Thread(target = server.serve_forever)
     thread.daemon = True
     thread.start()
-    print ('HTTP server started on port 8080')
+    #port 8080 didn't work
+    print ('HTTP server started on port 8085')
     while True:
         from time import sleep
         sleep(1)
